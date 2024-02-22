@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    } 
+
+    h1, h3 {
+      color: #070707;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .form-row input {
+      width: 28%;
+    }
+
+    button {
+      background-color: #0d0d0e;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+  <title>Pete's Pizza Delivery - Online Order Form</title>
+</head>
+<body>
+
+  <form action="Online form">
+    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZtdWIPVHHwMHaNgVJRRTFGRFec2JoSxjdgw&usqp=CAU">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZtdWIPVHHwMHaNgVJRRTFGRFec2JoSxjdgw&usqp=CAU" alt="Image not load ! ">
+    </a>
+    <h1>Pete's Pizza Delivery</h1>
+    <h3>Online Order Form</h3>
+
+    <div class="form-row">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="tel">Tel:</label>
+      <input type="tel" id="tel" name="tel" required>
+    </div>
+
+    <div class="form-row">  
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-row">
+      <label for="town">Town/city:</label> 
+      <input type="text" id="town" name="town" required>
+
+      <label for="postcode">Postcode:</label>
+      <input type="text" id="postcode" name="postcode" required>
+    </div>
+<center><table type="checkbox">
+    <form action="submit">
+      <td>
+      <h3>Topping</h3>
+     
+      <ul type="circle">
+        <li>Margherita</li>
+        <li>Four Season</li>
+        <li>Meat Feast</li>
+      </ul>
+    </td>
+    <td>
+      <h3>size</h3>
+      <ul type="circle">
+        <li>Small</li>
+        <li>Medium</li>
+        <li>Large</li>
+      </ul></td>
+      <td>
+      <h3>Extras</h3>
+      <ul type="square">
+        <li>Mushrooms</li>
+        <li>Green peppers</li>
+        <li>Anchovies</li>
+        <li>Extra cheese</li>
+        
+      </ul>
+    </td>
+  </form>
+</table></center>
+<center>
+  <form action="submit">
+    <label for="time">Preferred delivery time:</label>
+    <input type="time" id="time" name="time">
+
+    <label for="freeform">Delivery instructions:</label>
+    <textarea id="freeform" name="freeform" rows="4" cols="50" placeholder="Enter text here..."></textarea>
+<br>
+    <button type="submit">Submit</button>
+  </form>
+</center>
+</body>
+</html>

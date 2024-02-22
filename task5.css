@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+body {
+    background-image: url('photo.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 20%;
+    padding: 0%;
+}
+button {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: #0e5a11;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+#table {
+    font-size: 18px;
+    margin-top: 20px;
+}
+#result {
+    font-size: 40px;
+    margin-top: 20px;
+    color: rgb(190, 18, 18);
+
+}
+
+#result span {
+    color: rgb(148, 30, 30);
+}
