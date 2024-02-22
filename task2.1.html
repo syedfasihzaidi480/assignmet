@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="task2.1.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <b><em><p>Create an account</p></em></b>
+
+      <label for="username">Username *:  </label>
+      <input type="text" id="username" name="username" required maxlength="6">
+      <p class="mx"><b>max len should be: 6</b></p>
+
+      <label for="password">Password *:</label>
+      <input type="password" id="password" name="password" required>
+      
+      <label for="Birthday">Birthday:</label>
+      <input type="date" id="Birthday" name="Birthday" >
+
+      <label for="email">Email *:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="gender">Gender *:</label>
+      <input type="radio" id="male" name="gender" value="male" required>
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female" required>
+      <label for="female">Female</label>
+
+      <label for="number">Phone number *:</label>
+      <input type="tel" id="number" name="number" required pattern="[0-9]{10}">
+      
+      <label for="zip">Zip code *:</label>
+      <input type="text" id="zip" name="zip" required pattern="[0-9]{5}">
+      
+      <label for="country">Country *:</label>
+      <input type="text" id="country" name="country" required>
+
+      <button type="submit">Sign Up</button>
+      <button class="ne">
+        <a href="task2.html" class="signin-link" target="_blank">Sign in</a>
+      </button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+      // Prevent the form from submitting by default
+      event.preventDefault();
+
+      // Get form elements
+      var username = document.getElementById('username');
+      var password = document.getElementById('password');
+
+      // 1. Identify required fields.
+      var requiredFields = document.querySelectorAll('[required]');
+      for (var i = 0; i < requiredFields.length; i++) {
+        if (!requiredFields[i].value.trim()) {
+          alert('Please fill out all required fields');
+          return;
+        }
+      }
+
+      // 2. Validate input format and type.
+      if (!validateInputFormat()) {
+        return;
+      }
+
+      // 3. Check input data length.
+      if (username.value.length !== 6) {
+        alert('Username must be 6 characters long');
+        return;
+      }
+
+      // 4. Validate numeric input.
+      if (!isNumeric(password.value)) {
+        alert('Password must be numeric');
+        return;
+      }
+
+      // 5. Validate date input.
+      var birthday = document.getElementById('Birthday').value;
+      if (!isValidDate(birthday)) {
+        alert('Invalid date format for Birthday');
+        return;
+      }
+
+      // 6. Use pattern matching with regular expressions for username.
+      var usernamePattern = /^[a-zA-Z0-9]+$/;
+      if (!usernamePattern.test(username.value)) {
+        alert('Username can only contain alphanumeric characters');
+        return;
+      }
+
+      // Provide clear error messages (handled with alerts here, you can customize as needed)
+
+      // If all validations pass, you can proceed with form submission or further actions
+      alert('Validation successful! Form submitted.');
+    });
+
+    // Validate numeric input function
+    function isNumeric(value) {
+      return /^\d+$/.test(value);
+    }
+
+    // Validate date input function
+    function isValidDate(dateString) {
+      var regex = /^\d{4}-\d{2}-\d{2}$/;
+      return regex.test(dateString);
+    }
+
+    // 2. Validate input format and type.
+    function validateInputFormat() {
+      // Add your specific validation logic here for each input field.
+      return true; // Return true if all validations pass.
+    }
+  </script>
+</body>
+</html>
